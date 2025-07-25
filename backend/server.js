@@ -10,8 +10,11 @@ const  categoryRouter  = require('./routes/categoryRoute')
 const app = express()
 const PORT = process.env.PORT || 4000;
 
-app.use(cors())
+const allowedOrigins = ['http://localhost:5173', 'https://finance-buddy-pi.vercel.app']
+
+app.use(cors({origin: allowedOrigins}))
 app.use(express.json())
+
 
 app.get('/', (req, res) =>  res.send('Api is working'))
 app.use('/api/auth', authRouter)
