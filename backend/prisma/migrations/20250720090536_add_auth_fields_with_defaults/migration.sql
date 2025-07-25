@@ -1,0 +1,6 @@
+-- AlterTable
+ALTER TABLE "User" ADD COLUMN     "isVerified" BOOLEAN NOT NULL DEFAULT false,
+ADD COLUMN     "resetPasswordCode" TEXT NOT NULL DEFAULT '',
+ADD COLUMN     "resetPasswordCodeExpiresIn" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+ADD COLUMN     "verificationCode" TEXT NOT NULL DEFAULT '',
+ADD COLUMN     "verificationCodeExpiresIn" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP;
